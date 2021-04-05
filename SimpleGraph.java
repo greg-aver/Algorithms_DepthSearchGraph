@@ -160,37 +160,6 @@ public class SimpleGraph {
         }
     }
 
-   /* private Stack<Integer> searchWay(int indexFrom, int indexTo) {
-        Stack<Integer> way = new Stack<>();
-        int indexNoVisit = -1;
-        if (way.empty() || indexFrom != way.peek()) {
-            way.push(indexFrom);
-        }
-        vertex[indexFrom].visit();
-        for (int i = 0; i < getVertexSize(); i++) {
-            if (m_adjacency[i][indexFrom] == 1) {
-                if (i == indexTo) {
-                    way.push(i);
-                    return way;
-                }
-                if (!vertex[i].isHit()) {
-                    indexNoVisit = i;
-                }
-            }
-        }
-        if (indexNoVisit != -1) {
-            searchWay(indexNoVisit, indexTo);
-        } else {
-            way.pop();
-            if (way.empty()) {
-                return way;
-            } else {
-                searchWay(way.peek(), indexTo);
-            }
-        }
-        return way;
-    }*/
-
     public ArrayList<Vertex> DepthFirstSearch(int VFrom, int VTo) {
         ArrayList<Vertex> listResult = new ArrayList<>();
         Stack<Integer> way = new Stack<>();
@@ -203,37 +172,5 @@ public class SimpleGraph {
             // Список пустой, если пути нету
             return listResult;
     }
-    /*    public ArrayList<Vertex> DepthFirstSearch(int VFrom, int VTo)
-    {
-        ArrayList<Vertex> listResult = new ArrayList<>();
-        int vertexIndexNoVisit = -1;
-        vertex[VFrom].visit();
-        listResult.add(vertex[VFrom]);
-        for (int i = 0; i < getVertexSize(); i++) {
-            if (!vertex[i].isHit()) {
-                vertexIndexNoVisit = i;
-            }
-            if (m_adjacency[i][VFrom] == 1) {
-                if (i == VTo) {
-                    listResult.add(vertex[i]);
-                    return listResult;
-                }
-            }
-        }
-        if (vertexIndexNoVisit != -1) {
-            DepthFirstSearch(vertexIndexNoVisit, VTo);
-        } else {
-            listResult.remove(listResult.size() - 1);
-            if (listResult.isEmpty()) {
-                return listResult;
-            } else {
-                DepthFirstSearch(listResult.remove(listResult.size() - 1)., VTo);
-            }
-        }
-        // Узлы задаются позициями в списке vertex.
-        // Возвращается список узлов -- путь из VFrom в VTo.
-        // Список пустой, если пути нету
-        return listResult;
-    }*/
 
 }
